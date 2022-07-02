@@ -7,13 +7,9 @@ on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
     branches: ["master"]
-  workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  deploy:
-    # The type of runner that the job will run on
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
