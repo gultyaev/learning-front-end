@@ -20,8 +20,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Deploy
-        uses: enriikke/gatsby-gh-pages-action@v2
+      - uses: enriikke/gatsby-gh-pages-action@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           deploy-branch: gh-pages
