@@ -24,7 +24,7 @@ jobs:
         run: npm ci --peer-legacy-deps
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --prefix-paths
 
       - name: Deploy to GitHub Pages
         if: success()
