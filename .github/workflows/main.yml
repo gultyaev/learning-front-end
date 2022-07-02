@@ -21,7 +21,7 @@ jobs:
           node-version: "16"
 
       - name: Install Dependencies
-        run: npm ci --peer-legacy-deps
+        run: npm ci --legacy-peer-deps
 
       - name: Build
         run: npm run build -- --prefix-paths
