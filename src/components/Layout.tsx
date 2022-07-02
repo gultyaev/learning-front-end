@@ -5,6 +5,16 @@ interface LayoutProps {
   title?: string;
 }
 
+interface WrapperProps {
+  className?: string;
+}
+
+const Wrapper = ({ children, className }: PropsWithChildren<WrapperProps>) => (
+  <div className={`py-4 px-6 max-w-6xl mx-auto ${className || ""}`}>
+    {children}
+  </div>
+);
+
 function Layout({ children, title }: PropsWithChildren<LayoutProps>) {
   const { site } = useStaticQuery<Queries.SiteStaticQuery>(graphql`
     query SiteStatic {
@@ -21,11 +31,18 @@ function Layout({ children, title }: PropsWithChildren<LayoutProps>) {
     .join(" | ");
 
   return (
-    <main>
-      <title>{combinedTitle}</title>
+    <>
+      <header className="bg-slate-700">
+        <Wrapper className="text-4xl text-white">
+          {title || site?.siteMetadata?.title}
+        </Wrapper>
+      </header>
+      <main className="bg-slate-500 min-h-screen text-gray-100">
+        <title>{combinedTitle}</title>
 
-      {children}
-    </main>
+        <Wrapper className="md:py-8">{children}</Wrapper>
+      </main>
+    </>
   );
 }
 
