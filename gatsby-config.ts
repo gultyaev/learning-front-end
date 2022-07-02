@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Front-end starters`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://gultyaev.github.io/front-end-starters/`,
   },
   pathPrefix: "/front-end-starters",
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
