@@ -31,7 +31,9 @@ export const InlineCode = ({ children }: PropsWithChildren) => (
 );
 
 export const Code = ({ children }: PropsWithChildren) => (
-  <code className="bg-slate-800 p-2 mb-4 rounded-lg block">{children}</code>
+  <code className="bg-slate-800 p-2 mb-4 rounded-lg block overflow-x-auto">
+    {children}
+  </code>
 );
 
 export const layoutPrimitives = {
