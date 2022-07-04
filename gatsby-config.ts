@@ -41,6 +41,7 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-plugin-postcss",
+    "gatsby-plugin-react-helmet",
   ],
 };
 

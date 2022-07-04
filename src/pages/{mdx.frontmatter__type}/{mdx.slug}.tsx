@@ -11,7 +11,10 @@ interface StarterProjectPageProps {
 
 function StarterProjectPage({ data }: StarterProjectPageProps) {
   return (
-    <Layout title={data.mdx?.frontmatter?.title}>
+    <Layout
+      title={data.mdx?.frontmatter?.title}
+      description={data.mdx?.frontmatter?.description}
+    >
       <MDXProvider components={layoutPrimitives}>
         <MDXRenderer>{data.mdx?.body || ""}</MDXRenderer>
       </MDXProvider>
@@ -26,6 +29,7 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
+        description
       }
       body
     }

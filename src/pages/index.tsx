@@ -10,7 +10,7 @@ interface IndexPageProps {
 
 const IndexPage = ({ data }: IndexPageProps) => {
   return (
-    <Layout>
+    <Layout description="API services aimed to help beginner front-end developers to learn by practice">
       <H1>Projects</H1>
 
       <P>
