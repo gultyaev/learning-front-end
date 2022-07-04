@@ -42,23 +42,9 @@ function Layout({
       <Helmet>
         <title>{combinedTitle}</title>
 
-        <meta
-          property="og:title"
-          content={title || site?.siteMetadata?.title || ""}
-        />
-        <meta
-          name="twitter:title"
-          content={title || site?.siteMetadata?.title || ""}
-        />
-
         {description && <meta name="description" content={description} />}
-        {description && (
-          <meta property="og:description" content={description} />
-        )}
-        {description && (
-          <meta name="twitter:description" content={description} />
-        )}
 
+        <html lang="en" />
         <body className="min-h-screen bg-slate-600" />
       </Helmet>
 
