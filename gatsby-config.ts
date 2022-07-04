@@ -13,9 +13,12 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-emotion",
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: "gatsby-plugin-google-gtag",
       options: {
-        trackingId: "G-6QGWJV79HM",
+        trackingIds: ["G-6QGWJV79HM"],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     "gatsby-plugin-sitemap",
