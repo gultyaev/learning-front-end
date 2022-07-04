@@ -13,22 +13,26 @@ type: "starter"
 
 A portfolio project which can be used as a CV as well. Here you will be able to showcase some of your projects with pictures attached, list your acquired skills, bio etc.
 
-## What you will learn and demonstrate
+## What you will learn
 
-- How to work with the Basic auth.
+- How to work with the Basic auth
 - How to make HTTP requests to a RESTful API service
 - How to upload images to an S3 AWS bucket using a presigned link
-- How to work with an OpenAPI specs
+- How to work with OpenAPI specs
+- How to make authenticated requests
 
 ## Learning the available API endpoints for the project
 
 It contains an `openapi.yaml` file. You will need to open it using your IDE of choice, because it uses AWS Schema validation files from repository for requests description.
-For VS Code I recommend using `42Crunch.vscode-openapi`, when opened the yaml file you will be able to click on the icon in the top right corner to see the preview (same as for markdown files).
+For VS Code I recommend using [extension](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi), when opened the yaml file you will be able to click
+on the icon in the top right corner to see the preview (same as for markdown files).
 For Intellij users you could use [the plugin](https://plugins.jetbrains.com/plugin/14394-openapi-specifications).
 
 ## Recommended resources to read
 
 - [Basic auth](https://www.twilio.com/docs/glossary/what-is-basic-authentication)
+- [Angular Interceptors](https://angular.io/guide/http#setting-default-headers)
+- [Authenticating requests with Axios](https://stackoverflow.com/a/47851585/8144405)
 
 ## Image upload process
 
@@ -79,7 +83,7 @@ After the image was uploaded you can make the request to save profile/projects w
 
 ## Tech stack
 
-The API is deployed to the AWS using Serverless framework it will create:
+The API is deployed to the AWS using Serverless framework. It will create:
 
 - CloudFormation stack to create all required resources
 - Lambda functions exposed under single API gateway
@@ -88,3 +92,7 @@ The API is deployed to the AWS using Serverless framework it will create:
 - Access policies for the resources to work properly
 
 This should fall into the AWS Free Tier limitations.
+
+After 12 month of AWS Free Tier you will be chared for S3 Bucket resource, though the charge should be low you can always remove all created resources (see "Remove the service" section).
+
+This is not a production ready project, so don't put in any sensitive data as it may be exposed.

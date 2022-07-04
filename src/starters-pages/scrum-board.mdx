@@ -7,14 +7,96 @@ prerequisites:
 type: "starter"
 ---
 
-This project is created to help newcomers to front-end to learn working with back-end servers.
+[Repo link](https://github.com/gultyaev/board-api)
 
-Board API provides an API for creating a Scrum board. It allows to work with columns and tasks. OpenAPI documentations is exposed on /api endpoint.
+## What you will build
+
+A scrum board (similar to Jira/Trello). There will be columns and tickets in them.
+Tickets can be reordered in a column as well as be moved from column to column.
+To improve the UX you could add a drag n drop capabilities.
+
+## What you will learn
+
+- How to authenticate with JWT
+- How to make HTTP requests to a RESTful API service
+- How to work with OpenAPI specs
+- How to make authenticated requests
+- (optionally) Drag n drop with subsequent requests
+
+## Learning the available API endpoints for the project
+
+When you launch local development server you'll see a link in the console leading to `/docs` page with OpenAPI specs served.
+
+## Recommended resources to read
+
+- [JWT](https://jwt.io/introduction)
+- [Angular Interceptors](https://angular.io/guide/http#setting-default-headers)
+- [Authenticating requests with Axios](https://stackoverflow.com/a/47851585/8144405)
+
+## API excerpts
+
+### Board
+
+```
+{
+  "columns": [
+    {
+      "tasks": [
+        {
+          "id": "string",
+          "title": "string",
+          "description": "string",
+          "columnId": "string"
+        }
+      ],
+      "id": "string",
+      "title": "string"
+    }
+  ]
+}
+```
+
+### Reorder tasks
+
+This requires you to submit all ids of a column in a desired order.
+
+```
+{
+  "ids": [
+    "string"
+  ]
+}
+```
+
+### Update a task
+
+```
+{
+  "id": "string",
+  "title": "string",
+  "description": "string",
+  "columnId": "string"
+}
+```
+
+### Moving a task into another column
+
+Make the `PUT /tasks` request with the task's data and change the `columnId` to the destination column.
+To preserve the order same as in the UI make a subsequent request `/tasks/reorder` with the destination column
+ids in the desired order.
+
+## Tech stack
 
 The server can be run as locally as remotely by deploying to AWS using Serverless framework. The project is supposed to fall under Free Tier/Always Free Tier resources (to avoid payment for pet project).
+
+The API is deployed to the AWS using Serverless framework. It will create:
+
+- CloudFormation stack to create all required resources
+- Lambda functions exposed under single API gateway
+- DynamoDB database to store the data
+
+This should fall into the AWS Free Tier limitations.
 
 After 12 month of AWS Free Tier you will be chared for S3 Bucket resource, though the charge should be low you can always remove all created resources (see "Remove the service" section).
 
 This is not a production ready project, so don't put in any sensitive data as it may be exposed.
-
-[Repo link](https://github.com/gultyaev/board-api)
