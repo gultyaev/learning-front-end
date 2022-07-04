@@ -33,12 +33,12 @@ function Layout({ children, title }: PropsWithChildren<LayoutProps>) {
 
   return (
     <>
-      <header className="bg-slate-700">
+      <header className="bg-slate-800">
         <Wrapper className="text-4xl text-white">
           <Link to="/">{site?.siteMetadata?.title}</Link>
         </Wrapper>
       </header>
-      <main className="bg-slate-500 min-h-screen text-gray-100">
+      <main className="bg-slate-600 min-h-screen text-gray-100">
         <title>{combinedTitle}</title>
 
         <Wrapper className="md:py-8">
