@@ -1,13 +1,85 @@
 ---
 title: "Portfolio"
-description: "A project where you can show information about yourself, showcase your projects and use it as a portfolio/CV website. API enpoints require authentication for editing the data. It features skills, educations, projects, image upload."
+description: "A project where you can show information about yourself, showcase your projects and use it as a portfolio/CV website. API endpoints require authentication for editing the data. It features skills, educations, projects, image upload."
 complexity: "med"
 prerequisites:
   - "Basic knowledge of AWS (have an account and know how to create creds for AWS CLI)"
 type: "starter"
 ---
 
-This is a pet project as part of learning Go lang and helping devs learning FE use the API for their portfolio. The API is deployed to the AWS using Serverless framework it will create:
+[Repo link](https://github.com/gultyaev/aws-profile-go)
+
+## What you will build
+
+A portfolio project which can be used as a CV as well. Here you will be able to showcase some of your projects with pictures attached, list your acquired skills, bio etc.
+
+## What you will learn and demonstrate
+
+- How to work with the Basic auth.
+- How to make HTTP requests to a RESTful API service
+- How to upload images to an S3 AWS bucket using a presigned link
+- How to work with an OpenAPI specs
+
+## Learning the available API endpoints for the project
+
+It contains an `openapi.yaml` file. You will need to open it using your IDE of choice, because it uses AWS Schema validation files from repository for requests description.
+For VS Code I recommend using `42Crunch.vscode-openapi`, when opened the yaml file you will be able to click on the icon in the top right corner to see the preview (same as for markdown files).
+For Intellij users you could use [the plugin](https://plugins.jetbrains.com/plugin/14394-openapi-specifications).
+
+## Recommended resources to read
+
+- [Basic auth](https://www.twilio.com/docs/glossary/what-is-basic-authentication)
+
+## Image upload process
+
+Several API endpoints such as `/profile` and `/projects` can accept a link to an image. It can be any string in general.
+In order to upload the image you will need to use the `/image` endpoint. When submitted filename, it will return `url` and `uploadUrl`.
+The first one is used as a link to pass to the aforementioned endpoints, the latter one is for the PUT request with the image (this will make the actual image upload).
+
+After the image was uploaded you can make the request to save profile/projects with the newly uploaded image.
+
+## API excerpts
+
+### Profile
+
+```
+{
+  "name": "string",
+  "location": "string",
+  "contacts": [
+    {
+      "type": "string",
+      "value": "string"
+    }
+  ],
+  "profileImg": "string"
+}
+```
+
+### Projects
+
+```
+[
+  {
+    "title": "string",
+    "description": "string",
+    "descriptionShort": "string",
+    "images": [
+      "string"
+    ],
+    "links": [
+      {
+        "url": "string",
+        "type": "string"
+      }
+    ]
+  }
+]
+```
+
+## Tech stack
+
+The API is deployed to the AWS using Serverless framework it will create:
 
 - CloudFormation stack to create all required resources
 - Lambda functions exposed under single API gateway
@@ -16,7 +88,3 @@ This is a pet project as part of learning Go lang and helping devs learning FE u
 - Access policies for the resources to work properly
 
 This should fall into the AWS Free Tier limitations.
-
-The bins are included into the repo to ease the deployment process by mitigating the need of installing extra toolings.
-
-[Repo link](https://github.com/gultyaev/aws-profile-go)

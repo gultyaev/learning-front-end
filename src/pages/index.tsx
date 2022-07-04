@@ -21,6 +21,12 @@ const IndexPage = ({ data }: IndexPageProps) => {
         viable.
       </P>
 
+      <P>
+        You can approach front-end creation using any technology stack you
+        prefer as these projects are pure API with no front-end attached. You
+        could make even a web site on pure HTML/CSS/JS!
+      </P>
+
       <div className="flex flex-col space-y-5">
         {data.allMdx.nodes.map((n) => (
           <StarterProjectListItem
