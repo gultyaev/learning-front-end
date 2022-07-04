@@ -1,9 +1,52 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "../components/Layout";
+import { H1, P } from "../components/Primitives";
+import StarterProjectListItem from "../components/StarterProjectListItem";
 
-const IndexPage = () => {
-  return <Layout>hello</Layout>;
+interface IndexPageProps {
+  data: Queries.StarterProjectsQuery;
+}
+
+const IndexPage = ({ data }: IndexPageProps) => {
+  return (
+    <Layout>
+      <H1>Starters</H1>
+
+      <P>
+        This page contains a bunch of projects that are API services aimed to
+        help beginner front-end developers to learn by practice. Also, projects
+        target real life-like scenarios, so the experience earned by
+        implementing the front-end part and connecting with an API will be
+        viable.
+      </P>
+
+      <div className="flex flex-col space-y-5">
+        {data.allMdx.nodes.map((n) => (
+          <StarterProjectListItem
+            data={n}
+            key={n.slug}
+          ></StarterProjectListItem>
+        ))}
+      </div>
+    </Layout>
+  );
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query StarterProjects {
+    allMdx {
+      nodes {
+        slug
+        frontmatter {
+          title
+          description
+          prerequisites
+          complexity
+        }
+      }
+    }
+  }
+`;

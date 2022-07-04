@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Front-end starters`,
+    title: `Learning the front-end`,
     siteUrl: `https://gultyaev.github.io/front-end-starters/`,
   },
   pathPrefix: "/front-end-starters",
@@ -32,7 +32,13 @@ const config: GatsbyConfig = {
         name: "pages",
         path: "./src/pages/",
       },
-      __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "starters-pages",
+        path: "./src/starters-pages/",
+      },
     },
     "gatsby-plugin-postcss",
   ],

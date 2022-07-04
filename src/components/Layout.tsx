@@ -1,5 +1,6 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import React, { PropsWithChildren } from "react";
+import { H1 } from "./Primitives";
 
 interface LayoutProps {
   title?: string;
@@ -34,13 +35,16 @@ function Layout({ children, title }: PropsWithChildren<LayoutProps>) {
     <>
       <header className="bg-slate-700">
         <Wrapper className="text-4xl text-white">
-          {title || site?.siteMetadata?.title}
+          <Link to="/">{site?.siteMetadata?.title}</Link>
         </Wrapper>
       </header>
       <main className="bg-slate-500 min-h-screen text-gray-100">
         <title>{combinedTitle}</title>
 
-        <Wrapper className="md:py-8">{children}</Wrapper>
+        <Wrapper className="md:py-8">
+          {title && <H1>{title}</H1>}
+          {children}
+        </Wrapper>
       </main>
     </>
   );
