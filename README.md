@@ -1,4 +1,4 @@
-# Front end starters
+# Front end projects
 
 This repo will contain links to repositories which beginner front-end developers can use
 to build pet projects around life-like APIs.

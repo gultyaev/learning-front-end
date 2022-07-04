@@ -11,7 +11,7 @@ interface IndexPageProps {
 const IndexPage = ({ data }: IndexPageProps) => {
   return (
     <Layout>
-      <H1>Starters</H1>
+      <H1>Projects</H1>
 
       <P>
         This page contains a bunch of projects that are API services aimed to
