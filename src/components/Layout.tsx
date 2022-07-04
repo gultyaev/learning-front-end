@@ -58,6 +58,8 @@ function Layout({
         {description && (
           <meta name="twitter:description" content={description} />
         )}
+
+        <body className="min-h-screen bg-slate-600" />
       </Helmet>
 
       <header className="bg-slate-800">
@@ -66,7 +68,7 @@ function Layout({
         </Wrapper>
       </header>
 
-      <main className="bg-slate-600 min-h-screen text-gray-100">
+      <main className="text-gray-100">
         <Wrapper className="md:py-8">
           {title && <H1>{title}</H1>}
           {children}
