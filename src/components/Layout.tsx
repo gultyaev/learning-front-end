@@ -48,7 +48,7 @@ function Layout({
         <body className="min-h-screen bg-slate-600" />
       </Helmet>
 
-      <header className="bg-slate-800">
+      <header className="bg-slate-800 shadow-md">
         <Wrapper className="text-4xl text-white">
           <Link to="/">{site?.siteMetadata?.title}</Link>
         </Wrapper>

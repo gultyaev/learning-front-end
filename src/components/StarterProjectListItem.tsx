@@ -29,8 +29,8 @@ function StarterProjectListItem({ data }: StarterProjectListItemProps) {
   }
 
   return (
-    <article className="bg-slate-300/20 rounded-md p-6 flex flex-col space-y-4">
-      <h2 className="text-3xl mb-2 underline text-blue-200">
+    <article className="bg-slate-700 rounded-md p-6 flex flex-col space-y-4">
+      <h2 className="text-3xl mb-2 underline italic">
         <Link to={`/starter/${data.slug}`}>{data.frontmatter.title}</Link>
       </h2>
       <p>{data.frontmatter.description}</p>
