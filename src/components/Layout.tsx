@@ -1,7 +1,7 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import React, { PropsWithChildren } from "react";
 import { Helmet } from "react-helmet";
-import { H1 } from "./Primitives";
+import { A, H1 } from "./Primitives";
 
 interface LayoutProps {
   title?: string;
@@ -48,18 +48,32 @@ function Layout({
         <body className="min-h-screen bg-slate-600" />
       </Helmet>
 
-      <header className="bg-slate-800 shadow-md">
-        <Wrapper className="text-4xl text-white">
-          <Link to="/">{site?.siteMetadata?.title}</Link>
-        </Wrapper>
-      </header>
+      <div className="flex flex-col min-h-screen">
+        <header className="bg-slate-800 shadow-md">
+          <Wrapper className="text-4xl text-white">
+            <Link to="/">{site?.siteMetadata?.title}</Link>
+          </Wrapper>
+        </header>
 
-      <main className="text-gray-100">
-        <Wrapper className="md:py-8">
-          {title && <H1>{title}</H1>}
-          {children}
-        </Wrapper>
-      </main>
+        <main className="text-gray-100 flex-1 pb-10">
+          <Wrapper className="md:py-8">
+            {title && <H1>{title}</H1>}
+            {children}
+          </Wrapper>
+        </main>
+
+        <footer className="bg-slate-900 py-4">
+          <Wrapper>
+            <a
+              href="https://github.com/gultyaev/learning-front-end"
+              target="_blank"
+              className="text-white underline"
+            >
+              GitHub
+            </a>
+          </Wrapper>
+        </footer>
+      </div>
     </>
   );
 }
