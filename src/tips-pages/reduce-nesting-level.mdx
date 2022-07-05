@@ -1,0 +1,42 @@
+---
+title: "Reduce nesting level"
+date: "2022-07-05"
+type: "tip"
+---
+
+Developers like to approach code writing in the way of thinking. By doing so the following constructions
+appear.
+
+```
+class UserService {
+  #initialized = false;
+
+  init() {
+    if (!this.#initialized) {
+      // run init logic
+    }
+  }
+}
+```
+
+Notice something odd here? We have only one if statement that surrounds all method's logic.
+For simple methods it may be not be a big problem, but as the complexity grows it becomes harder
+to follow the code as it continues to increase nesting level.
+
+Instead, it's better to rewrite it in the next way.
+
+```
+class UserService {
+  #initialized = false;
+
+  init() {
+    if (this.#initialized) { // <-- swap the condition and return
+      return;
+    }
+
+    // run init logic
+  }
+}
+```
+
+This way the code is less nested and easier to follow.

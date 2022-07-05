@@ -43,6 +43,13 @@ const config: GatsbyConfig = {
         path: "./src/starters-pages/",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "starters-pages",
+        path: "./src/tips-pages/",
+      },
+    },
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
   ],
