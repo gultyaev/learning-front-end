@@ -43,7 +43,7 @@ export default IndexPage;
 
 export const query = graphql`
   query StarterProjects {
-    allMdx {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         slug
         frontmatter {
