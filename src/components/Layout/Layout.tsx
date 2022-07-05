@@ -1,22 +1,15 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import React, { PropsWithChildren } from "react";
 import { Helmet } from "react-helmet";
-import { A, H1 } from "./Primitives";
+import { H1 } from "../Primitives";
+import Footer from "./Footer";
+import Header from "./Header";
+import Wrapper from "./Wrapper";
 
 interface LayoutProps {
   title?: string;
   description?: string | null;
 }
-
-interface WrapperProps {
-  className?: string;
-}
-
-const Wrapper = ({ children, className }: PropsWithChildren<WrapperProps>) => (
-  <div className={`py-4 px-6 max-w-6xl mx-auto ${className || ""}`}>
-    {children}
-  </div>
-);
 
 function Layout({
   children,
@@ -49,11 +42,7 @@ function Layout({
       </Helmet>
 
       <div className="flex flex-col min-h-screen">
-        <header className="bg-slate-800 shadow-md">
-          <Wrapper className="text-4xl text-white">
-            <Link to="/">{site?.siteMetadata?.title}</Link>
-          </Wrapper>
-        </header>
+        <Header />
 
         <main className="text-gray-100 flex-1 pb-10">
           <Wrapper className="md:py-8">
@@ -62,17 +51,7 @@ function Layout({
           </Wrapper>
         </main>
 
-        <footer className="bg-slate-900 py-4">
-          <Wrapper>
-            <a
-              href="https://github.com/gultyaev/learning-front-end"
-              target="_blank"
-              className="text-white underline"
-            >
-              GitHub
-            </a>
-          </Wrapper>
-        </footer>
+        <Footer />
       </div>
     </>
   );
