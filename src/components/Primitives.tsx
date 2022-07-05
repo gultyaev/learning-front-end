@@ -27,7 +27,7 @@ export const A = ({ children, ...props }: PropsWithChildren) => (
 );
 
 export const InlineCode = ({ children }: PropsWithChildren) => (
-  <code className="bg-slate-800 py-1 px-1.5 mx-0.5 rounded-sm">{children}</code>
+  <code className="bg-slate-800 py-1 px-1.5 mx-0.5 rounded-md">{children}</code>
 );
 
 export const Code = ({ children }: PropsWithChildren) => (
