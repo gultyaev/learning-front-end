@@ -3,9 +3,9 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Learning the front-end`,
-    siteUrl: `https://gultyaev.github.io/front-end-starters/`,
+    siteUrl: `https://gultyaev.github.io/learning-front-end/`,
   },
-  pathPrefix: "/front-end-starters",
+  pathPrefix: "/learning-front-end",
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
