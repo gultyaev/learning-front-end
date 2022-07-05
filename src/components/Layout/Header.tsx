@@ -7,10 +7,10 @@ const links = [
     to: "/",
     title: "Projects",
   },
-  // {
-  //   to: "/tips",
-  //   title: "Tips",
-  // },
+  {
+    to: "/tips",
+    title: "Tips",
+  },
 ];
 
 function Header() {
