@@ -1,0 +1,27 @@
+---
+title: "Simple if statements"
+date: "2022-07-05"
+type: "tip"
+---
+
+Sometimes developers tend to write code in a verbose way.
+
+```
+function isNameValid(name) {
+  if (name.includes('#')) {
+    return false;
+  }
+
+  return true;
+}
+```
+
+Despite it does the job it's better to simplify the code.
+
+```
+function isNameValid(name) {
+  return !name.includes('#');
+}
+```
+
+With a simple change it becomes less verbose, more readable and does the same job.

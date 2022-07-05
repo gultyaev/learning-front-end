@@ -12,15 +12,17 @@ function TipsPage({ data }: TipsPageProps) {
     <Layout>
       <H1>Tips</H1>
 
-      <div className="flex flex-col py-6 gap-5">
+      <div className="flex flex-col gap-8">
         {data.allMdx.nodes.map((n) => (
-          <div key={n.slug} className="flex justify-between items-start">
+          <article key={n.slug}>
             <h2 className="text-2xl hover:underline">
               <Link to={`/tip/${n.slug}`}>{n.frontmatter?.title}</Link>
             </h2>
 
-            <span className="italic">{n.frontmatter?.date}</span>
-          </div>
+            <div className="italic mb-4">{n.frontmatter?.date}</div>
+
+            <div>{n.excerpt}</div>
+          </article>
         ))}
       </div>
     </Layout>
@@ -41,6 +43,7 @@ export const query = graphql`
           title
           date(formatString: "MMMM DD YYYY")
         }
+        excerpt
       }
     }
   }
