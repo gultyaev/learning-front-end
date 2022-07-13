@@ -1,0 +1,31 @@
+---
+title: "Keep function arguments short"
+date: "2022-07-13"
+type: "tip"
+---
+
+Simple functions are easy to read and use. When a function starts to have more than 3 arguments it becomes much harder
+to use it correctly, read and understand it. Take the following example that tracks users' activity.
+
+```
+function track(userId, action, page, element) { ... }
+
+track(1, 'pay', 'checkout', '#pay-btm');
+```
+
+It's relatively easy to read it when you have the function and the usage side by side, but what if you want to use it
+some time later? Most probably you won't remember how to use it. Furthermore, it may need more options in the future
+and some of the old ones may become optional, then it would require some refactoring to adjust the logic to the new realities.
+
+It's considered a better approach to accept arguments as an object instead. This way, the function call contains
+one or a couple of arguments, and the object can increase the number of options with time without any need to
+refactor existing usages! Moreover, function call becomes easier to read.
+
+```
+track({
+  userId: 1,
+  action: 'pay',
+  page: 'checkout',
+  element: '#pay-btm'
+});
+```
