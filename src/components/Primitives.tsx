@@ -5,11 +5,11 @@ export const H1 = ({ children }: PropsWithChildren) => (
 );
 
 export const H2 = ({ children }: PropsWithChildren) => (
-  <h2 className="text-3xl mb-6">{children}</h2>
+  <h2 className="text-3xl mt-6 mb-4">{children}</h2>
 );
 
 export const H3 = ({ children }: PropsWithChildren) => (
-  <h2 className="text-2xl mb-4">{children}</h2>
+  <h3 className="text-2xl mt-6 mb-4">{children}</h3>
 );
 
 export const P = ({ children }: PropsWithChildren) => (

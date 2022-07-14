@@ -28,7 +28,20 @@ const config: GatsbyConfig = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 920,
+            },
+          },
+        ],
+        plugins: [`gatsby-remark-images`]
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -46,12 +59,21 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
+        name: "images",
+        path: "./src/images/",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
         name: "starters-pages",
         path: "./src/tips-pages/",
       },
     },
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
   ],
 };
 

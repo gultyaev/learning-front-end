@@ -20,12 +20,11 @@ function Header() {
         <nav>
           <ul className="flex gap-3">
             {links.map((e) => (
-              <li>
+              <li key={e.to}>
                 <Link
                   className="text-white py-2 px-4 rounded-md hover:underline"
                   activeClassName="bg-slate-900"
                   to={e.to}
-                  key={e.to}
                 >
                   {e.title}
                 </Link>
