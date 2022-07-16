@@ -12,10 +12,10 @@ function TipsPage({ data }: TipsPageProps) {
     <Layout>
       <H1>Tips</H1>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4">
         {data.allMdx.nodes.map((n) => (
-          <article key={n.slug}>
-            <h2 className="text-2xl hover:underline">
+          <article key={n.slug} className="border-b-4 border-b-slate-800 pb-4 last:border-0">
+            <h2 className="text-2xl underline hover:text-amber-500">
               <Link to={`/tip/${n.slug}`}>{n.frontmatter?.title}</Link>
             </h2>
 

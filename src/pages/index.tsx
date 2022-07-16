@@ -27,7 +27,7 @@ const IndexPage = ({ data }: IndexPageProps) => {
         could make even a web site on pure HTML/CSS/JS!
       </P>
 
-      <div className="flex flex-col py-6 gap-5">
+      <div className="flex flex-col py-6 gap-4">
         {data.allMdx.nodes.map((n) => (
           <StarterProjectListItem
             data={n}

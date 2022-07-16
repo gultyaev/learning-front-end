@@ -14,7 +14,7 @@ const ComplexityLevel = ({ complexity }: { complexity: string | null }) => {
       : "bg-lime-700";
 
   return (
-    <span>
+    <span className="mt-2">
       Complexity level:{" "}
       <span className={`uppercase ${className} py-0.5 px-2 rounded-md`}>
         {complexity}
@@ -29,8 +29,8 @@ function StarterProjectListItem({ data }: StarterProjectListItemProps) {
   }
 
   return (
-    <article className="bg-slate-700 rounded-md p-6 flex flex-col space-y-4">
-      <h2 className="text-3xl mb-2 underline italic">
+    <article className="flex flex-col border-b-4 border-b-slate-800 pb-4 last:border-0">
+      <h2 className="text-2xl mb-1 underline hover:text-amber-500">
         <Link to={`/project/${data.slug}`}>{data.frontmatter.title}</Link>
       </h2>
       <p>{data.frontmatter.description}</p>

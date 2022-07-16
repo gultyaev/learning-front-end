@@ -21,7 +21,7 @@ export const Ul = ({ children }: PropsWithChildren) => (
 );
 
 export const A = ({ children, ...props }: PropsWithChildren) => (
-  <a className="underline text-blue-200" target="_blank" {...props}>
+  <a className="underline text-amber-500 hover:text-amber-200" target="_blank" {...props}>
     {children}
   </a>
 );
