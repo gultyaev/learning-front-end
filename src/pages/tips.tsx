@@ -15,7 +15,7 @@ function TipsPage({ data }: TipsPageProps) {
       <div className="flex flex-col gap-4">
         {data.allMdx.nodes.map((n) => (
           <article key={n.slug} className="border-b-4 border-b-slate-800 pb-4 last:border-0">
-            <h2 className="text-2xl underline hover:text-amber-500">
+            <h2 className="text-2xl underline hover:text-amber-500 inline-block">
               <Link to={`/tip/${n.slug}`}>{n.frontmatter?.title}</Link>
             </h2>
 

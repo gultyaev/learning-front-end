@@ -30,7 +30,7 @@ function StarterProjectListItem({ data }: StarterProjectListItemProps) {
 
   return (
     <article className="flex flex-col border-b-4 border-b-slate-800 pb-4 last:border-0">
-      <h2 className="text-2xl mb-1 underline hover:text-amber-500">
+      <h2 className="text-2xl mb-1 underline hover:text-amber-500 self-start">
         <Link to={`/project/${data.slug}`}>{data.frontmatter.title}</Link>
       </h2>
       <p>{data.frontmatter.description}</p>
