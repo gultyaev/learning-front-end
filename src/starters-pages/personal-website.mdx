@@ -111,7 +111,7 @@ we are building a very simple website with no private data we are completely sav
 
 Chose the "JavaScript" option and proceed to the docs. They come to `npm install contentful` and
 
-```
+```javascript
 const contentful = require("contentful");
 const client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
@@ -132,10 +132,10 @@ part that comes after the `entries/` is your entry ID.
 
 Put your space, access token and entry ID in the snippet above. You should get response similar to this.
 
-```
+```json
 {
-  "metadata": { ... },
-  "sys": { ... },
+  "metadata": { },
+  "sys": { },
   "fields": {
     "data": {
       "fullName": "John Doe",

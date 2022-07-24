@@ -38,9 +38,15 @@ const config: GatsbyConfig = {
               maxWidth: 920,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              noInlineHighlight: true,
+            },
+          },
         ],
-        plugins: [`gatsby-remark-images`]
-      }
+        plugins: [`gatsby-remark-images`, `gatsby-remark-prismjs`],
+      },
     },
     {
       resolve: "gatsby-source-filesystem",

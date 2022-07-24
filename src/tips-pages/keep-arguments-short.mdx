@@ -7,8 +7,8 @@ type: "tip"
 Simple functions are easy to read and use. When a function starts to have more than 3 arguments it becomes much harder
 to use it correctly, read and understand it. Take the following example that tracks users' activity.
 
-```
-function track(userId, action, page, element) { ... }
+```javascript
+function track(userId, action, page, element) { /* some implementation details */ }
 
 track(1, 'pay', 'checkout', '#pay-btm');
 ```
@@ -21,7 +21,7 @@ It's considered a better approach to accept arguments as an object instead. This
 one or a couple of arguments, and the object can increase the number of options with time without any need to
 refactor existing usages! Moreover, function call becomes easier to read.
 
-```
+```javascript
 track({
   userId: 1,
   action: 'pay',

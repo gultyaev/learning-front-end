@@ -13,7 +13,7 @@ export const H3 = ({ children }: PropsWithChildren) => (
 );
 
 export const P = ({ children }: PropsWithChildren) => (
-  <p className="mb-3 text-lg">{children}</p>
+  <p className="mb-3 text-lg last-child:mb-0">{children}</p>
 );
 
 export const Ul = ({ children }: PropsWithChildren) => (
@@ -21,19 +21,19 @@ export const Ul = ({ children }: PropsWithChildren) => (
 );
 
 export const A = ({ children, ...props }: PropsWithChildren) => (
-  <a className="hover:underline text-amber-500 hover:text-amber-400" target="_blank" {...props}>
+  <a
+    className="hover:underline text-amber-500 hover:text-amber-400"
+    target="_blank"
+    {...props}
+  >
     {children}
   </a>
 );
 
 export const InlineCode = ({ children }: PropsWithChildren) => (
-  <code className="bg-slate-900 text-lg py-1 px-1.5 mx-0.5 rounded-md whitespace-normal break-words">{children}</code>
-);
-
-export const Code = ({ children }: PropsWithChildren) => (
-  <div className="overflow-x-auto text-lg bg-slate-900 mb-4 rounded-lg">
-    <code className="p-2 block w-fit">{children}</code>
-  </div>
+  <code className="bg-slate-900 text-lg py-1 px-1.5 mx-0.5 rounded-md whitespace-normal break-words">
+    {children}
+  </code>
 );
 
 export const layoutPrimitives = {
@@ -44,5 +44,4 @@ export const layoutPrimitives = {
   ul: Ul,
   a: A,
   inlineCode: InlineCode,
-  code: Code,
 };

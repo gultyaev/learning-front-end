@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+        @apply text-lg bg-slate-900 mb-4 rounded-lg !important;
+    }
+}

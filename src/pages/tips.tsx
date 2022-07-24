@@ -1,7 +1,7 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
 import Layout from "../components/Layout";
-import { H1 } from "../components/Primitives";
+import { H1, P } from "../components/Primitives";
 
 interface TipsPageProps {
   data: Queries.TipsQuery;
@@ -19,14 +19,14 @@ function TipsPage({ data }: TipsPageProps) {
             key={n.slug}
             className="col-span-2 md:col-span-1 hover:scale-105 transition-all hover:shadow-2xl"
           >
-            <article className="bg-slate-900 p-8 rounded-2xl">
+            <article className="bg-slate-900 px-8 py-7 rounded-2xl">
               <h2 className="text-3xl text-amber-500 inline-block mb-2">
                 {n.frontmatter?.title}
               </h2>
 
               <div className="italic mb-4">{n.frontmatter?.date}</div>
 
-              <div>{n.excerpt}</div>
+              <P>{n.excerpt}</P>
             </article>
           </Link>
         ))}

@@ -6,7 +6,7 @@ type: "tip"
 
 Sometimes developers tend to write code in a verbose way.
 
-```
+```javascript
 function isNameValid(name) {
   if (name.includes('#')) {
     return false;
@@ -18,7 +18,7 @@ function isNameValid(name) {
 
 Despite it does the job it's better to simplify the code.
 
-```
+```javascript
 function isNameValid(name) {
   return !name.includes('#');
 }
