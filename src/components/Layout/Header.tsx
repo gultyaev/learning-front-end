@@ -15,10 +15,10 @@ const links = [
 
 function Header() {
   return (
-    <header className="bg-slate-800 shadow-md">
+    <header className="py-8">
       <Wrapper>
         <nav>
-          <ul className="flex gap-3">
+          <ul className="flex justify-end gap-3">
             {links.map((e) => (
               <li key={e.to}>
                 <Link

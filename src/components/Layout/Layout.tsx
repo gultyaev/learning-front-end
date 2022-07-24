@@ -38,14 +38,14 @@ function Layout({
         {description && <meta name="description" content={description} />}
 
         <html lang="en" />
-        <body className="min-h-screen bg-slate-600" />
+        <body className="min-h-screen bg-slate-800" />
       </Helmet>
 
       <div className="flex flex-col min-h-screen">
         <Header />
 
         <main className="text-gray-100 flex-1 pb-10">
-          <Wrapper className="md:py-8">
+          <Wrapper className="py-12 md:py-16">
             {title && <H1>{title}</H1>}
             {children}
           </Wrapper>

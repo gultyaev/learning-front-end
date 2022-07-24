@@ -6,7 +6,7 @@ interface WrapperProps {
 
 function Wrapper({ children, className }: PropsWithChildren<WrapperProps>) {
   return (
-    <div className={`py-4 px-6 max-w-6xl mx-auto ${className || ""}`}>
+    <div className={`px-6 max-w-5xl mx-auto ${className || ""}`}>
       {children}
     </div>
   );

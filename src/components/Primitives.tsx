@@ -1,37 +1,37 @@
 import React, { PropsWithChildren } from "react";
 
 export const H1 = ({ children }: PropsWithChildren) => (
-  <h1 className="text-4xl mb-8">{children}</h1>
+  <h1 className="text-5xl font-bold uppercase mb-16">{children}</h1>
 );
 
 export const H2 = ({ children }: PropsWithChildren) => (
-  <h2 className="text-3xl mt-6 mb-4">{children}</h2>
+  <h2 className="text-4xl font-semibold mt-10 mb-6">{children}</h2>
 );
 
 export const H3 = ({ children }: PropsWithChildren) => (
-  <h3 className="text-2xl mt-6 mb-4">{children}</h3>
+  <h3 className="text-3xl font-semibold mt-10 mb-6">{children}</h3>
 );
 
 export const P = ({ children }: PropsWithChildren) => (
-  <p className="mb-4">{children}</p>
+  <p className="mb-3 text-lg">{children}</p>
 );
 
 export const Ul = ({ children }: PropsWithChildren) => (
-  <ul className="list-disc mb-4 pl-4">{children}</ul>
+  <ul className="list-disc text-lg mb-4 pl-4">{children}</ul>
 );
 
 export const A = ({ children, ...props }: PropsWithChildren) => (
-  <a className="underline text-amber-500 hover:text-amber-200" target="_blank" {...props}>
+  <a className="hover:underline text-amber-500 hover:text-amber-400" target="_blank" {...props}>
     {children}
   </a>
 );
 
 export const InlineCode = ({ children }: PropsWithChildren) => (
-  <code className="bg-slate-800 py-1 px-1.5 mx-0.5 rounded-md whitespace-normal break-words">{children}</code>
+  <code className="bg-slate-900 text-lg py-1 px-1.5 mx-0.5 rounded-md whitespace-normal break-words">{children}</code>
 );
 
 export const Code = ({ children }: PropsWithChildren) => (
-  <div className="overflow-x-auto bg-slate-800 mb-4 rounded-lg">
+  <div className="overflow-x-auto text-lg bg-slate-900 mb-4 rounded-lg">
     <code className="p-2 block w-fit">{children}</code>
   </div>
 );

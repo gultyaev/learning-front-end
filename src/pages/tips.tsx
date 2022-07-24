@@ -12,17 +12,23 @@ function TipsPage({ data }: TipsPageProps) {
     <Layout>
       <H1>Tips</H1>
 
-      <div className="flex flex-col gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {data.allMdx.nodes.map((n) => (
-          <article key={n.slug} className="border-b-4 border-b-slate-800 pb-4 last:border-0">
-            <h2 className="text-2xl underline hover:text-amber-500 inline-block">
-              <Link to={`/tip/${n.slug}`}>{n.frontmatter?.title}</Link>
-            </h2>
+          <Link
+            to={`/tip/${n.slug}`}
+            key={n.slug}
+            className="col-span-2 md:col-span-1 hover:scale-105 transition-all hover:shadow-2xl"
+          >
+            <article className="bg-slate-900 p-8 rounded-2xl">
+              <h2 className="text-3xl text-amber-500 inline-block mb-2">
+                {n.frontmatter?.title}
+              </h2>
 
-            <div className="italic mb-4">{n.frontmatter?.date}</div>
+              <div className="italic mb-4">{n.frontmatter?.date}</div>
 
-            <div>{n.excerpt}</div>
-          </article>
+              <div>{n.excerpt}</div>
+            </article>
+          </Link>
         ))}
       </div>
     </Layout>
