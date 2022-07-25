@@ -1,7 +1,9 @@
 import React, { PropsWithChildren } from "react";
 
 export const H1 = ({ children }: PropsWithChildren) => (
-  <h1 className="text-5xl font-bold uppercase mb-16">{children}</h1>
+  <h1 className="text-5xl font-bold uppercase mb-16 tracking-wide">
+    {children}
+  </h1>
 );
 
 export const H2 = ({ children }: PropsWithChildren) => (
