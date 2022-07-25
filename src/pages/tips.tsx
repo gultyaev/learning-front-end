@@ -17,7 +17,7 @@ function TipsPage({ data }: TipsPageProps) {
           <Link
             to={`/tip/${n.slug}`}
             key={n.slug}
-            className="col-span-2 md:col-span-1 hover:scale-105 transition-all hover:shadow-2xl"
+            className="col-span-2 md:col-span-1 hover:scale-105 transition-all [@media(any-hover:hover)]:hover:shadow-2xl"
           >
             <article className="bg-slate-900 px-8 py-7 rounded-2xl">
               <h2 className="text-3xl text-amber-500 inline-block mb-2 font-semibold">

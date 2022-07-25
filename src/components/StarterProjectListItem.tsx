@@ -32,7 +32,7 @@ function StarterProjectListItem({ data }: StarterProjectListItemProps) {
   return (
     <Link
       to={`/project/${data.slug}`}
-      className="hover:scale-105 transition-all hover:shadow-2xl"
+      className="[@media(any-hover:hover)]:hover:scale-105 transition-all hover:shadow-2xl"
     >
       <article className="flex flex-col bg-slate-900 px-8 py-7 rounded-2xl">
         <h2 className="text-3xl mb-6 text-amber-500 self-start font-semibold">
