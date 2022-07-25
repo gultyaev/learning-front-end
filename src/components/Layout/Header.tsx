@@ -15,7 +15,7 @@ const links = [
 
 function Header() {
   return (
-    <header className="py-8">
+    <header className="py-8 sticky top-0 bg-[#000424] z-10">
       <Wrapper>
         <nav className="flex justify-end items-center">
           <ul className="flex justify-end gap-3 mr-5">
@@ -23,7 +23,7 @@ function Header() {
               <li key={e.to}>
                 <Link
                   className="text-white py-2 px-4 rounded-md hover:bg-slate-900"
-                  activeClassName="bg-slate-900"
+                  activeClassName="bg-slate-800"
                   to={e.to}
                 >
                   {e.title}

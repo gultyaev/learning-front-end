@@ -1,17 +1,21 @@
 import React, { PropsWithChildren } from "react";
 
 export const H1 = ({ children }: PropsWithChildren) => (
-  <h1 className="text-5xl font-bold uppercase mb-16 tracking-wider text-white">
+  <h1 className="text-5xl font-bold uppercase mb-16 tracking-wider text-gray-100">
     {children}
   </h1>
 );
 
 export const H2 = ({ children }: PropsWithChildren) => (
-  <h2 className="text-4xl font-semibold mt-10 mb-6 text-white">{children}</h2>
+  <h2 className="text-4xl font-semibold mt-10 mb-6 text-gray-100">
+    {children}
+  </h2>
 );
 
 export const H3 = ({ children }: PropsWithChildren) => (
-  <h3 className="text-3xl font-semibold mt-10 mb-6 text-white">{children}</h3>
+  <h3 className="text-3xl font-semibold mt-10 mb-6 text-gray-100">
+    {children}
+  </h3>
 );
 
 export const P = ({ children }: PropsWithChildren) => (
