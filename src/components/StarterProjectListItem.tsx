@@ -16,7 +16,7 @@ const ComplexityLevel = ({ complexity }: { complexity: string | null }) => {
 
   return (
     <span>
-      <span className="text-lg">Complexity level: </span>
+      <span>Complexity level: </span>
       <span className={`uppercase ${className} py-0.5 px-2 rounded-md`}>
         {complexity}
       </span>
@@ -35,14 +35,14 @@ function StarterProjectListItem({ data }: StarterProjectListItemProps) {
       className="hover:scale-105 transition-all hover:shadow-2xl"
     >
       <article className="flex flex-col bg-slate-900 px-8 py-7 rounded-2xl">
-        <h2 className="text-3xl mb-6 text-amber-500 self-start">
+        <h2 className="text-3xl mb-6 text-amber-500 self-start font-semibold">
           {data.frontmatter.title}
         </h2>
         <P>{data.frontmatter.description}</P>
 
         {data.frontmatter.prerequisites && (
           <div>
-            <P>Prerequisites: </P>
+            <span>Prerequisites: </span>
             <Ul>
               {data.frontmatter.prerequisites.map((e, i) => (
                 <li className="list-disc ml-8" key={i}>

@@ -44,7 +44,7 @@ function Layout({
       <div className="flex flex-col min-h-screen">
         <Header />
 
-        <main className="text-gray-100 flex-1 pb-10">
+        <main className="text-gray-200 flex-1 pb-10 text-lg">
           <Wrapper className="py-12 md:py-16">
             {title && <H1>{title}</H1>}
             {children}

@@ -22,7 +22,7 @@ function Header() {
             {links.map((e) => (
               <li key={e.to}>
                 <Link
-                  className="text-white py-2 px-4 rounded-md hover:underline"
+                  className="text-white py-2 px-4 rounded-md hover:bg-slate-700"
                   activeClassName="bg-slate-900"
                   to={e.to}
                 >
