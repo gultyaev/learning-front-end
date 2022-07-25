@@ -38,7 +38,7 @@ function Layout({
         {description && <meta name="description" content={description} />}
 
         <html lang="en" />
-        <body className="min-h-screen bg-slate-800" />
+        <body className="min-h-screen bg-[#000424]" />
       </Helmet>
 
       <div className="flex flex-col min-h-screen">
