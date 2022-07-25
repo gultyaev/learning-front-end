@@ -2,7 +2,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import React, { PropsWithChildren } from "react";
 import { Helmet } from "react-helmet";
 import { H1 } from "../Primitives";
-import Footer from "./Footer";
 import Header from "./Header";
 import Wrapper from "./Wrapper";
 
@@ -38,7 +37,7 @@ function Layout({
         {description && <meta name="description" content={description} />}
 
         <html lang="en" />
-        <body className="min-h-screen bg-[#000424]" />
+        <body className="min-h-screen bg-[#000424] overflow-y-visible" />
       </Helmet>
 
       <div className="flex flex-col min-h-screen">
@@ -50,8 +49,6 @@ function Layout({
             {children}
           </Wrapper>
         </main>
-
-        <Footer />
       </div>
     </>
   );

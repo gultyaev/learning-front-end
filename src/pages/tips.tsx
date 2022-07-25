@@ -12,7 +12,7 @@ function TipsPage({ data }: TipsPageProps) {
     <Layout>
       <H1>Tips</H1>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 items-stretch">
         {data.allMdx.nodes.map((n) => (
           <Link
             to={`/tip/${n.slug}`}
