@@ -15,9 +15,11 @@ function StarterProjectPage({ data }: StarterProjectPageProps) {
       title={data.mdx?.frontmatter?.title}
       description={data.mdx?.frontmatter?.description}
     >
-      <MDXProvider components={layoutPrimitives}>
-        <MDXRenderer>{data.mdx?.body || ""}</MDXRenderer>
-      </MDXProvider>
+      <article>
+        <MDXProvider components={layoutPrimitives}>
+          <MDXRenderer>{data.mdx?.body || ""}</MDXRenderer>
+        </MDXProvider>
+      </article>
     </Layout>
   );
 }
