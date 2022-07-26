@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 import Wrapper from "./Wrapper";
+import { LinkGetProps } from "@reach/router";
 
 const links = [
   {
@@ -11,7 +12,36 @@ const links = [
     to: "/tips",
     title: "Tips",
   },
-];
+] as const;
+
+const linksMap = {
+  "/": "/project",
+  "/tips": "/tip",
+} as const;
+
+function isPartiallyCurrent({
+  href,
+  location,
+  isCurrent,
+}: LinkGetProps): object {
+  const baseClassName = "text-white py-2 px-4 rounded-md hover:bg-slate-900";
+  const activeClassName = baseClassName + " bg-slate-900";
+
+  if (
+    isCurrent ||
+    (href in linksMap &&
+      location.pathname.startsWith(linksMap[href as keyof typeof linksMap]))
+  ) {
+    return {
+      className: activeClassName,
+      "aria-current": "page",
+    };
+  }
+
+  return {
+    className: baseClassName,
+  };
+}
 
 function Header() {
   return (
@@ -21,11 +51,7 @@ function Header() {
           <ul className="flex justify-end gap-3 mr-5">
             {links.map((e) => (
               <li key={e.to}>
-                <Link
-                  className="text-white py-2 px-4 rounded-md hover:bg-slate-900"
-                  activeClassName="bg-slate-800"
-                  to={e.to}
-                >
+                <Link getProps={isPartiallyCurrent} to={e.to}>
                   {e.title}
                 </Link>
               </li>
