@@ -31,7 +31,7 @@ function StarterProjectListItem({ data }: StarterProjectListItemProps) {
 
   return (
     <Link
-      to={`/project/${data.slug}`}
+      to={`/project/${data.slug}/`}
       className="[@media(any-hover:hover)]:hover:scale-105 transition-all hover:shadow-2xl"
     >
       <article className="flex flex-col bg-slate-900 px-8 py-7 rounded-2xl">

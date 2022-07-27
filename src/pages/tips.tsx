@@ -15,7 +15,7 @@ function TipsPage({ data }: TipsPageProps) {
       <div className="grid grid-cols-2 gap-6 items-stretch">
         {data.allMdx.nodes.map((n) => (
           <Link
-            to={`/tip/${n.slug}`}
+            to={`/tip/${n.slug}/`}
             key={n.slug}
             className="col-span-2 md:col-span-1 hover:scale-105 transition-all [@media(any-hover:hover)]:hover:shadow-2xl"
           >
